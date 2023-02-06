@@ -1,12 +1,9 @@
-<h1>EVENTOS</h1>
-<button [disabled]="btnDisabled">Btn prueba</button>
-<button (click)="activ_desactiv_btn()">ENABLE BTN</button>
-<p class="enlinea">Edad {{person.age}}</p>
-<button (click)="aument_edad()">EDAD++</button>
-<br><br>
-<div class="box"(scroll)="onScroll($event)">
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio placeat cum expedita soluta rem fuga eum sunt veniam, repudiandae doloremque quos libero, atque natus a vitae mollitia laborum? Officia, quasi?</p>
+<h1>*ngFor ejemplo</h1>
+<div class="products--grid">
+  <div *ngFor="let p of products" >
+    <input type="text" [(ngModel)]="widthImg">
+    <img [style.width.px]="widthImg" [src]="p.image" alt="">
+    <h3>{{p.price}}</h3>
+    <p>{{p.name}}</p>
+  </div>
 </div>
-<!-- EVENTO CON INPUT-->
-<input type="text" [value]="person.name" (keyup)="changeName($event)"> <!-- keyup: teclear-->
-<p class="enlinea"> Nombre: {{person.name}}</p>
