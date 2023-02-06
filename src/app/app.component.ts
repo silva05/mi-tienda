@@ -23,4 +23,13 @@ export class AppComponent {
   aument_edad(){
     this.person.age+=1;
   }
+  onScroll (event:Event){
+    const element = event.target as HTMLElement; //por ser div
+    console.log(element.scrollTop);
+  }
+  changeName(event:Event){
+    const element = event.target as HTMLInputElement; //por ser input
+    this.person.name = element.value;
+
+  }
 }
